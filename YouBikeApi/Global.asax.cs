@@ -15,7 +15,7 @@ namespace YouBikeApi
 
             AutoMappingConfig.Init();
 
-            GlobalConfiguration.Configure(AutofacConfig.Bootstrapper);
+            GlobalConfiguration.Configure(AutofacConfig.Register);
         }
     }
 }

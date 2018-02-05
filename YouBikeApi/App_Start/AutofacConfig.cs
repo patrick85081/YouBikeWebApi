@@ -18,7 +18,7 @@ namespace YouBikeApi
 {
     public class AutofacConfig
     {
-        public static void Bootstrapper(HttpConfiguration config)
+        public static void Register(HttpConfiguration config)
         {
             ContainerBuilder builder = new ContainerBuilder();
 
@@ -36,6 +36,7 @@ namespace YouBikeApi
             builder.RegisterInstance<IMapper>(Mapper.Instance);
 
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+            builder.RegisterControllers(Assembly.GetExecutingAssembly());
 
             var container = builder.Build();
 
