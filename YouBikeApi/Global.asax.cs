@@ -12,6 +12,10 @@ namespace YouBikeApi
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
+
+            AutoMappingConfig.Init();
+
+            GlobalConfiguration.Configure(AutofacConfig.Bootstrapper);
         }
     }
 }
